@@ -1,0 +1,150 @@
+@import 'src/App.scss';
+
+@mixin mquery($size) {
+  @if $size == lg {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: 1220px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  } @else if $size == sm-xs {
+    @media (min-width: 480px) {
+      @content;
+    }
+  } @else if $size == xs {
+    @media (min-width: 340px) {
+      @content;
+    }
+  }
+}
+
+.skills-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  @include mquery(sm) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.skills-title {
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 35px;
+  padding: 10px;
+  background-color: $card-color;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 10px;
+  @include mquery(md) {
+    margin-right: 10px;
+    margin-left: 50px;
+  }
+
+  @include mquery(lg) {
+    padding: 50px;
+  }
+}
+
+.skills-main-title {
+  margin-left: 100px;
+
+  transform: rotate(-55deg);
+  font-size: 100px;
+  z-index: -1;
+  @include mquery(sm-xs) {
+    margin-left: 0;
+  }
+}
+
+.skills-title:last-child {
+  margin-right: 50px;
+}
+
+.skills-title-selected {
+  background-color: $highlight-font-color;
+  color: black;
+}
+
+.skills-title:hover {
+  background-color: $highlight-font-color;
+  color: black;
+}
+
+.skill-description-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $card-color;
+  font-size: 30px;
+  margin: auto;
+  margin-top: 30px;
+  width: 90%;
+  border-radius: 10px;
+  min-height: fit-content;
+  @include mquery(sm) {
+    width: 70%;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.skill-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 10px;
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 20px;
+
+  @include mquery(sm) {
+    margin-right: 0;
+  }
+}
+
+.skills-description-title {
+  color: $highlight-font-color;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  @include mquery(md) {
+    font-size: 35px;
+  }
+}
+
+.description-item {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+span {
+  color: $highlight-font-color;
+  font-weight: normal;
+}
+
+.skills-container {
+  margin-right: 35%;
+  min-height: fit-content;
+  min-width: 90%;
+  @include mquery(sm-xs) {
+    min-width: 0;
+    margin-right: 0;
+  }
+}

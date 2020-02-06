@@ -1,0 +1,80 @@
+@import 'src/App.scss';
+
+@mixin mquery($size) {
+  @if $size == lg {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: 1300px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  } @else if $size == 900 {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == xs {
+    @media (min-width: 340px) {
+      @content;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 5%;
+
+  @include mquery(sm) {
+    max-width: 30%;
+  }
+  @include mquery(xs) {
+    max-width: 20%;
+  }
+}
+
+.title {
+  color: white;
+  transform: rotate(81deg);
+  font-size: 140px;
+  max-width: fit-content;
+  margin-top: 180px;
+  font-weight: lighter;
+}
+
+.title:hover {
+  cursor: pointer;
+  color: $highlight-font-color;
+}
+
+.title:active {
+  color: $highlight-font-color;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin-right: 400px;
+  @include mquery(lg) {
+    width: 70%;
+  }
+}
+
+.separator {
+  height: 70px;
+}

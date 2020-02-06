@@ -1,0 +1,187 @@
+@import 'src/App.scss';
+
+@mixin mquery($size) {
+  @if $size == lg {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  } @else if $size == md {
+    @media (min-width: 1300px) {
+      @content;
+    }
+  } @else if $size == sm {
+    @media (min-width: 1000px) {
+      @content;
+    }
+  } @else if $size == 900 {
+    @media (min-width: 900px) {
+      @content;
+    }
+  } @else if $size == 770 {
+    @media (min-width: 770px) {
+      @content;
+    }
+  } @else if $size == xs {
+    @media (min-width: 340px) {
+      @content;
+    }
+  }
+}
+
+.project-container {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 10px;
+  min-width: 70%;
+  background-color: $card-color;
+  height: 400px;
+  min-width: 70vw;
+  position: relative;
+  overflow-y: hidden;
+
+  @include mquery(770) {
+    min-width: 120%;
+    flex-direction: row;
+  }
+
+  @include mquery(900) {
+    min-width: 130%;
+  }
+}
+
+.project-title {
+  color: $highlight-font-color;
+  font-size: 20px;
+  background-color: $card-color;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  text-align: center;
+}
+
+.img-container {
+  margin-top: 10px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  order: 2;
+
+  @include mquery(770) {
+    order: 0;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+.project-img {
+  display: none;
+
+  @include mquery(770) {
+    display: block;
+    width: 300px;
+    height: 140px;
+    border-radius: 10px;
+  }
+
+  @include mquery(md) {
+    width: 400px;
+    height: 190px;
+  }
+}
+
+.technologies-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+  max-width: 300px;
+  margin-bottom: 30px;
+  align-self: flex-start;
+}
+
+.technology {
+  background-color: $highlight-font-color;
+  padding: 7px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin-right: 10px;
+  max-height: 200px;
+}
+
+.description {
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.button-container {
+  background-color: $card-color;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  position: absolute;
+  left: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 15px;
+  align-self: flex-start;
+  margin-bottom: 10px;
+  bottom: 0;
+
+  @include mquery(md) {
+    align-self: flex-end;
+    right: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.github-button,
+.livesite-button {
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+  min-width: fit-content;
+}
+
+.github-button {
+  color: $highlight-font-color;
+  background-color: $body-background-color;
+}
+
+.github-button:hover,
+.livesite-button:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.github-button:active,
+.livesite-button:active {
+  transform: scale(1);
+}
+
+.livesite-button {
+  color: $card-color;
+  background-color: $highlight-font-color;
+}

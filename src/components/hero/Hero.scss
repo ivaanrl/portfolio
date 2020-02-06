@@ -1,0 +1,21 @@
+@import 'src/App.scss';
+
+.main-container {
+  color: white;
+  min-height: 95vh;
+  margin: auto;
+  font-size: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: lighter;
+}
+
+.typist {
+  min-width: 32%;
+}
+
+span {
+  color: $highlight-font-color;
+}

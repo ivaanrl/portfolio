@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700&display=swap');
+
+@font-face {
+  font-family: 'RobotoCondensed';
+  src: url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700&display=swap')
+    format('truetype');
+}
+
+$main-font-color: rgb(146, 140, 140);
+$body-background-color: rgb(26, 24, 24);
+$highlight-font-color: rgb(252, 129, 15);
+$card-color: rgb(46, 42, 42);
+
+body {
+  background-color: $body-background-color;
+}

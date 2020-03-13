@@ -1,9 +1,23 @@
 @import 'src/App.scss';
 
+@mixin mquery($size) {
+  @if $size == 600 {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+}
+
 .contact-main-title {
   font-size: 100px;
   transform: rotate(-55deg);
   max-width: 30%;
+  z-index: -20;
+  opacity: 0.1;
+
+  @include mquery(600) {
+    opacity: 1;
+  }
 }
 
 h1 {

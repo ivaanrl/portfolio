@@ -56,6 +56,12 @@
   }
 }
 
+.title-straight {
+  @include mquery(sm) {
+    display: none;
+  }
+}
+
 .skills-main-title {
   margin-left: 100px;
 
@@ -140,7 +146,7 @@ span {
 }
 
 .skills-container {
-  margin-right: 35%;
+  margin-right: 10px;
   min-height: fit-content;
   min-width: 90%;
   @include mquery(sm-xs) {

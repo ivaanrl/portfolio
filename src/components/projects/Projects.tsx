@@ -4,6 +4,7 @@ import Project from './project/Project';
 import TwotterImg from '../../assets/Projects/Screenshots/twooterScreenshot.png';
 import AlgorithmsImg from '../../assets/Projects/Screenshots/algorithmVisualizerScreenshot.png';
 import PathfindingImg from '../../assets/Projects/Screenshots/Screenshot from 2020-02-06 14-56-12.png';
+import PomodoroImg from '../../assets/Projects/Screenshots/pomodoroimg.png';
 import ScrollAnimation from 'react-animate-on-scroll';
 import 'animate.css/animate.min.css';
 
@@ -28,12 +29,19 @@ const Projects = () => {
 
   const pathfindignTechnologies: string[] = ['React'];
 
+  const pomodoroTechnologies: string[] = ['React', 'Jest', 'Enzyme', 'Redux'];
+
+  const pomodoroDescription: string =
+    'This is a simple Pomodoro Timer in which you can set custom times for your work sessions and breaks. It was built using TDD (Test Driven Development), using Jest and Enzyme.';
+
   return (
     <div className="container" id="projects">
       <div className="title-container">
         <div className="title">PROJECTS</div>
       </div>
+
       <div className="projects-container">
+        <div className="separator"></div>
         <ScrollAnimation animateIn="fadeInRight" animateOnce>
           <Project
             title="Twooter"
@@ -64,6 +72,17 @@ const Projects = () => {
             liveSite="https://ivaanrl.github.io/pathfindingVisualizer/"
             picture={PathfindingImg}
             technologies={pathfindignTechnologies}
+          ></Project>
+        </ScrollAnimation>
+        <div className="separator"></div>
+        <ScrollAnimation animateIn="fadeInRight" animateOnce>
+          <Project
+            title="Pomodoro Timer (TDD with Jest + Enzyme)"
+            description={pomodoroDescription}
+            github="https://github.com/ivaanrl/pomodoro/deployments"
+            liveSite="https://ivaanrl.github.io/pomodoro/"
+            picture={PomodoroImg}
+            technologies={pomodoroTechnologies}
           ></Project>
         </ScrollAnimation>
       </div>

@@ -87,6 +87,9 @@ const Skills = () => {
               <div className="description-item">
                 <span>Webpack</span>
               </div>
+              <div className="description-item">
+                <span>Jest</span>
+              </div>
             </div>
             <div className="skill-description">
               <div className="skills-description-title">MORE TOOLS</div>
@@ -97,6 +100,9 @@ const Skills = () => {
               <div className="description-item">
                 <span>Heroku</span>
               </div>
+              <div className="description-item">
+                <span>Enzyme</span>
+              </div>
             </div>
           </div>
         );
@@ -106,14 +112,12 @@ const Skills = () => {
           <div className="skill-description-container">
             <div className="skill-description">
               <div className="skills-description-title">CURRENTLY LEARNING</div>
-              <div className="description-item">
-                Integrating Typescript with Node.js
-              </div>
-              <div className="description-item">Python/Django</div>
+              <div className="description-item">C/C++</div>
+              <div className="description-item">MatLab</div>
             </div>
             <div className="skill-description">
               <div className="skills-description-title">WANT TO LEARN</div>
-              <div className="description-item">Elixir</div>
+              <div className="description-item">Python</div>
               <div className="description-item">Electron</div>
               <div className="description-item">Machine Learning</div>
               <div className="description-item">GraphQL</div>

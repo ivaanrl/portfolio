@@ -79,7 +79,7 @@ const Projects = () => {
           <Project
             title="Pomodoro Timer (TDD with Jest + Enzyme)"
             description={pomodoroDescription}
-            github="https://github.com/ivaanrl/pomodoro/deployments"
+            github="https://github.com/ivaanrl/pomodoro"
             liveSite="https://ivaanrl.github.io/pomodoro/"
             picture={PomodoroImg}
             technologies={pomodoroTechnologies}

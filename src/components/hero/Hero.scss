@@ -1,15 +1,35 @@
-@import 'src/App.scss';
+@import "src/App.scss";
+
+@mixin mquery($size) {
+  @if $size == 1100 {
+    @media (min-width: 1100px) {
+      @content;
+    }
+  } @else if $size == 650 {
+    @media (min-width: 650px) {
+      @content;
+    }
+  }
+}
 
 .main-container {
   color: white;
-  min-height: 95vh;
+  min-height: 100vh;
   margin: auto;
   font-size: 50px;
   width: 100%;
+  max-width: 1600px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-weight: lighter;
+}
+
+.image {
+  display: none;
+  @include mquery(1100) {
+    display: block;
+  }
 }
 
 .typist {
@@ -18,4 +38,66 @@
 
 span {
   color: $highlight-font-color;
+}
+
+.titles-and-buttons {
+  margin-bottom: 100px;
+}
+
+.main-title {
+  font-size: 48px;
+  color: $clear-text;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: $main-font-color;
+  font-size: 30px;
+  margin-bottom: 25px;
+  font-weight: normal;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  @include mquery(650) {
+    margin: 0px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.see-my-work {
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color: $highlight-font-color;
+  color: $body-background-color;
+  margin-top: 15px;
+
+  @include mquery(650) {
+    margin-top: 0px;
+  }
+}
+
+.see-my-work:hover {
+  background-color: $highlight-font-color-hover;
+}
+
+.check-my-skills {
+  @extend .see-my-work;
+  background-color: $muted-background-color;
+  color: $highlight-font-color;
+}
+.check-my-skills:hover {
+  background-color: $muted-background-color-hover;
 }

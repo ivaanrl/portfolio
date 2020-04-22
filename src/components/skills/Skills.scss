@@ -1,15 +1,15 @@
-@import 'src/App.scss';
+@import "src/App.scss";
 
 @mixin mquery($size) {
-  @if $size == lg {
-    @media (min-width: 1600px) {
+  @if $size == 1550 {
+    @media (min-width: 1550px) {
       @content;
     }
-  } @else if $size == md {
-    @media (min-width: 1220px) {
+  } @else if $size == 1260 {
+    @media (min-width: 1260px) {
       @content;
     }
-  } @else if $size == sm {
+  } @else if $size == 1000 {
     @media (min-width: 1000px) {
       @content;
     }
@@ -24,133 +24,94 @@
   }
 }
 
-.skills-title-container {
+.skills-container {
+  margin-top: 200px;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  row-gap: 100px;
+  @include mquery(1260) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.skill {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  @include mquery(sm) {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-.skills-title {
-  border-radius: 20px;
-  margin-right: 10px;
-  margin-left: 20px;
-  cursor: pointer;
-  font-size: 35px;
-  padding: 10px;
-  background-color: $card-color;
-  width: 80%;
-  text-align: center;
-  margin-bottom: 10px;
-  @include mquery(md) {
-    margin-right: 10px;
-    margin-left: 50px;
-  }
-
-  @include mquery(lg) {
-    padding: 50px;
-  }
-}
-
-.title-straight {
-  @include mquery(sm) {
-    display: none;
-  }
-}
-
-.skills-main-title {
-  margin-left: 100px;
-
-  transform: rotate(-55deg);
-  font-size: 100px;
-  z-index: -1;
-  @include mquery(sm-xs) {
-    margin-left: 0;
-  }
-}
-
-.skills-title:last-child {
-  margin-right: 50px;
-}
-
-.skills-title-selected {
-  background-color: $highlight-font-color;
-  color: black;
-}
-
-.skills-title:hover {
-  background-color: $highlight-font-color;
-  color: black;
-}
-
-.skill-description-container {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  background-color: $card-color;
-  font-size: 30px;
+  justify-content: space-between;
   margin: auto;
-  margin-top: 30px;
-  width: 90%;
-  border-radius: 10px;
-  min-height: fit-content;
-  @include mquery(sm) {
-    width: 70%;
+  @include mquery(1000) {
+    min-width: 520px;
+  }
+  @include mquery(1260) {
+    justify-content: flex-start;
+    margin-left: 15%;
+  }
+  @include mquery(1550) {
+    justify-content: flex-start;
+    margin-left: 30%;
   }
 }
 
-ul {
-  list-style: none;
-}
-
-.skill-description {
+.title-and-image {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  border-radius: 10px;
-  height: 300px;
-  margin-top: 10px;
-  margin-left: 15px;
-  margin-right: 20px;
-
-  @include mquery(sm) {
-    margin-right: 0;
-  }
+  align-items: center;
 }
 
-.skills-description-title {
-  color: $highlight-font-color;
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 10px;
-
-  @include mquery(md) {
-    font-size: 35px;
-  }
-}
-
-.description-item {
-  margin-bottom: 15px;
-  font-size: 20px;
+img {
+  width: 120%;
 }
 
 span {
-  color: $highlight-font-color;
-  font-weight: normal;
+  display: none;
+  @include mquery(1000) {
+    display: inline-block;
+  }
+}
+.skill-title {
+  color: $main-font-color;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.skills-container {
-  margin-right: 10px;
-  min-height: fit-content;
-  min-width: 90%;
-  @include mquery(sm-xs) {
-    min-width: 0;
-    margin-right: 0;
+.skill-list {
+  color: $highlight-font-color;
+  font-size: 19px;
+}
+
+.tools-image-container {
+  margin-right: 30px;
+}
+
+.tools-image {
+  margin-bottom: 50px;
+}
+
+.frontend-image {
+  margin-bottom: 13px;
+  width: 100%;
+}
+
+.book-image-container {
+  margin-right: 20px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include mquery(1000) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+ul.frontend-list {
+  grid-template-columns: 1fr;
+  @include mquery(1000) {
+    grid-template-columns: 2.5fr 1fr;
   }
 }

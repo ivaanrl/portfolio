@@ -1,16 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,800;1,900&display=swap");
 
-@font-face {
-  font-family: 'RobotoCondensed';
-  src: url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,700&display=swap')
-    format('truetype');
-}
+$main-font-color: #3d5af1;
+$highlight-font-color-hover: #00e1ff;
+$highlight-font-color-disabled: #51afbb;
+$body-background-color: #0e153a;
 
-$main-font-color: rgb(146, 140, 140);
-$body-background-color: rgb(26, 24, 24);
-$highlight-font-color: rgb(252, 129, 15);
+$highlight-font-color: #22d1ee;
+$muted-background-color: #1f2a62;
+$muted-background-color-hover: #283da3;
 $card-color: rgb(46, 42, 42);
+$clear-text: #e2f3f5;
 
 body {
   background-color: $body-background-color;
+  font-family: "Nunito";
+  max-width: 100vw;
 }

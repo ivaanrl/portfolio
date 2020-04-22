@@ -1,20 +1,20 @@
-@import 'src/App.scss';
+@import "src/App.scss";
 
 @mixin mquery($size) {
   @if $size == lg {
     @media (min-width: 1600px) {
       @content;
     }
-  } @else if $size == md {
+  } @else if $size == 1300 {
     @media (min-width: 1300px) {
       @content;
     }
-  } @else if $size == sm {
-    @media (min-width: 1000px) {
+  } @else if $size == 550 {
+    @media (min-width: 550px) {
       @content;
     }
-  } @else if $size == 900 {
-    @media (min-width: 900px) {
+  } @else if $size == 1000 {
+    @media (min-width: 1000px) {
       @content;
     }
   } @else if $size == 770 {
@@ -29,159 +29,112 @@
 }
 
 .project-container {
-  min-height: 450px;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  border-radius: 10px;
-  min-width: 70%;
-  background-color: $card-color;
-  height: 400px;
-  min-width: 70vw;
   position: relative;
-  overflow-y: hidden;
-
-  @include mquery(770) {
-    min-width: 120%;
-    flex-direction: row;
-  }
-
-  @include mquery(900) {
-    min-width: 130%;
-  }
-}
-
-.project-title {
-  color: $highlight-font-color;
-  font-size: 20px;
-  background-color: $card-color;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 10px;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  text-align: center;
-}
-
-.img-container {
-  margin-top: 10px;
-  margin-left: 10px;
+  background-color: $muted-background-color;
+  border-radius: 10px;
+  margin: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: flex;
-  flex-direction: column;
-  order: 2;
-
-  @include mquery(770) {
-    order: 0;
-    margin-top: 30px;
-    margin-left: 30px;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid $muted-background-color;
+  @include mquery(550) {
+    border: 20px solid $muted-background-color;
+  }
+  @include mquery(1000) {
+    border: 50px solid $muted-background-color;
   }
 }
 
 .project-img {
+  width: 80%;
+}
+
+.hover-container {
   display: none;
-
-  @include mquery(770) {
-    display: block;
-    width: 300px;
-    height: 140px;
-    border-radius: 10px;
-  }
-
-  @include mquery(md) {
-    width: 400px;
-    height: 190px;
-  }
 }
 
-.technologies-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 15px;
-  max-width: 300px;
-  margin-bottom: 30px;
-  align-self: flex-start;
-}
-
-.technology {
-  background-color: $highlight-font-color;
-  padding: 7px;
-  margin-right: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 90%;
-  margin-right: 10px;
-  max-height: 200px;
+.title {
+  color: $highlight-font-color;
+  font-size: 23px;
+  font-weight: bold;
+  background-color: $muted-background-color;
+  border-radius: 5px;
+  padding: 3px;
 }
 
 .description {
-  margin-right: 10px;
-  margin-left: 20px;
-}
+  color: $clear-text;
+  display: none;
+  font-size: 19px;
+  background-color: $muted-background-color;
+  border-radius: 5px;
+  padding: 3px;
 
-.button-container {
-  background-color: $card-color;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 10px;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  position: absolute;
-  left: 2%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 15px;
-  align-self: flex-start;
-  margin-bottom: 10px;
-  bottom: 0;
-
-  @include mquery(md) {
-    align-self: flex-end;
-    right: 0;
+  @include mquery(700) {
+    display: block;
   }
 }
 
-a {
+.button-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.live-site {
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $highlight-font-color;
+  color: $body-background-color;
+}
+
+.live-site:hover {
+  background-color: $highlight-font-color-hover;
+}
+
+.code {
+  @extend .live-site;
+  background-color: $muted-background-color;
+  color: $highlight-font-color;
+}
+
+.code:hover {
+  background-color: $muted-background-color-hover;
+}
+
+.button-container a {
   text-decoration: none;
   color: inherit;
 }
 
-.github-button,
-.livesite-button {
-  padding: 10px;
-  margin-right: 20px;
-  border-radius: 5px;
-  min-width: fit-content;
+.project-container:hover {
+  .hover-container {
+    display: flex;
+    flex-direction: column;
+    height: 120%;
+    width: 110%;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 900;
+  }
+
+  .project-img {
+    filter: blur(1px);
+    animation: makeImageBigger 1s forwards;
+  }
 }
 
-.github-button {
-  color: $highlight-font-color;
-  background-color: $body-background-color;
-}
-
-.github-button:hover,
-.livesite-button:hover {
-  color: white;
-  transform: scale(1.2);
-}
-
-.github-button:active,
-.livesite-button:active {
-  transform: scale(1);
-}
-
-.livesite-button {
-  color: $card-color;
-  background-color: $highlight-font-color;
+@keyframes makeImageBigger {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
 }

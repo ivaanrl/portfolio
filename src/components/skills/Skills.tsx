@@ -1,158 +1,108 @@
-import React, { useEffect, useState } from 'react';
-import './Skills.scss';
+import React from "react";
+import "./Skills.scss";
+import Monitor from "../../assets/FigmaComponents/Monitor.png";
+//import Gears from "../../assets/FigmaComponents/Gears.png";
+import Server from "../../assets/FigmaComponents/Server.png";
+import terminal from "../../assets/FigmaComponents/terminal.png";
+import Book from "../../assets/FigmaComponents/Book.png";
 
 const Skills = () => {
-  const [skillDescription, setSkillDescription] = useState();
-
-  const [currentSelectedElement, setCurrentSelectedElement] = useState();
-
-  useEffect(() => {
-    setCurrentSelectedElement(document.getElementById('frontend'));
-
-    changeSkillText('frontend');
-  }, []);
-
-  const selectSkill = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const selectedElement: HTMLElement = event.currentTarget;
-    selectedElement.classList.add('skills-title-selected');
-    currentSelectedElement?.classList.remove('skills-title-selected');
-    setCurrentSelectedElement(selectedElement);
-    changeSkillText(selectedElement.id);
-  };
-
-  const changeSkillText = (id: string) => {
-    switch (id) {
-      case 'frontend':
-        setSkillDescription(
-          <div className="skill-description-container">
-            <div className="skill-description">
-              <div className="skills-description-title">HTLM & CSS</div>
-              <div className="description-item">HTML5, CSS3, Sass</div>
-              <div className="description-item">Bootstrap 3 & 4</div>
-              <div className="description-item">
-                <span>Responsive Web Design</span>
-              </div>
-            </div>
-            <div className="skill-description">
-              <div className="skills-description-title">JAVASCRIPT</div>
-              <div className="description-item">Javascript ES6+</div>
-              <div className="description-item">
-                <span>React.js & Redux</span>
-              </div>
-              <div className="description-item">
-                <span>React Hooks</span>
-              </div>
-              <div className="description-item">
-                <span>Angular 8</span>
-              </div>
-              <div className="description-item">API Integration</div>
-            </div>
-          </div>
-        );
-        break;
-      case 'backend':
-        setSkillDescription(
-          <div className="skill-description-container">
-            <div className="skill-description">
-              <div className="skills-description-title">BACKEND</div>
-              <div className="description-item">
-                <span>Node.js & Express.js</span>
-              </div>
-              <div className="description-item">Basics of Ruby on rails</div>
-              <div className="description-item">REST API Creation</div>
-            </div>
-            <div className="skill-description">
-              <div className="skills-description-title">DATABASES</div>
-              <div className="description-item">
-                <span>PostgreSQL</span>
-              </div>
-              <div className="description-item">PgAdmin 4</div>
-              <div className="description-item">Psql</div>
-              <div className="description-item">MongoDB</div>
-            </div>
-          </div>
-        );
-        break;
-      case 'tools':
-        setSkillDescription(
-          <div className="skill-description-container">
-            <div className="skill-description">
-              <div className="skills-description-title">TOOLS</div>
-              <div className="description-item">
-                <span>Typescript</span>
-              </div>
-              <div className="description-item">Git version control</div>
-              <div className="description-item">Postman</div>
-              <div className="description-item">Cloudinary</div>
-              <div className="description-item">
-                <span>Webpack</span>
-              </div>
-              <div className="description-item">
-                <span>Jest</span>
-              </div>
-            </div>
-            <div className="skill-description">
-              <div className="skills-description-title">MORE TOOLS</div>
-              <div className="description-item">Npm/Yarn</div>
-              <div className="description-item">ESLint</div>
-              <div className="description-item">VSCode</div>
-              <div className="description-item">Github</div>
-              <div className="description-item">
-                <span>Heroku</span>
-              </div>
-              <div className="description-item">
-                <span>Enzyme</span>
-              </div>
-            </div>
-          </div>
-        );
-        break;
-      case 'learning':
-        setSkillDescription(
-          <div className="skill-description-container">
-            <div className="skill-description">
-              <div className="skills-description-title">CURRENTLY LEARNING</div>
-              <div className="description-item">C/C++</div>
-              <div className="description-item">MatLab</div>
-            </div>
-            <div className="skill-description">
-              <div className="skills-description-title">WANT TO LEARN</div>
-              <div className="description-item">Python</div>
-              <div className="description-item">Electron</div>
-              <div className="description-item">Machine Learning</div>
-              <div className="description-item">GraphQL</div>
-            </div>
-          </div>
-        );
-        break;
-    }
-  };
-
   return (
-    <div className="main-container">
-      <div className="title-container">
-        <div className="skills-main-title">SKILLS</div>
-      </div>
-      <div className="skills-container">
-        <div className="skills-title-container">
-          <div
-            className="skills-title skills-title-selected"
-            id="frontend"
-            onClick={selectSkill}
-          >
-            FrontEnd
-          </div>
-          <div className="skills-title" id="backend" onClick={selectSkill}>
-            BackEnd
-          </div>
-          <div className="skills-title" id="tools" onClick={selectSkill}>
-            Tools
-          </div>
-          <div className="skills-title" id="learning" onClick={selectSkill}>
-            Learning
+    <div className="skills-container" id="skills">
+      <div className="frontend skill">
+        <div className="title-and-image">
+          <div className="skill-title">Front-End</div>
+          <div className="monitor-image-container">
+            <img
+              src={Monitor}
+              alt="Drawing of a monitor"
+              className=" frontend-image"
+            />
           </div>
         </div>
-        {skillDescription}
+        <div className="skill-list">
+          <ul className="frontend-list">
+            <li>React</li>
+            <li>Redux</li>
+            <li>Angular 2+</li>
+            <li>Typescript</li>
+            <span>
+              <li>REST API integration</li>
+            </span>
+            <span>
+              <li>HTML5</li>
+            </span>
+            <span>
+              <li>SASS</li>
+            </span>
+            <span>
+              <li>Material UI</li>
+            </span>
+          </ul>
+        </div>
+      </div>
+
+      <div className="backend skill">
+        <div className="title-and-image">
+          <div className="skill-title">Back-End</div>
+          <div className="images">
+            <img src={Server} alt="Drawing of a monitor" />
+          </div>
+        </div>
+
+        <div className="skill-list">
+          <ul>
+            <li>NodeJS</li>
+            <li>ExpressJS</li>
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+            <li>REST API</li>
+            <li>Java</li>
+            <li>Java Spring</li>
+          </ul>
+        </div>
+      </div>
+      <div className="tools skill">
+        <div className="title-and-image">
+          <div className="skill-title">Tools</div>
+          <div className="tools-image-container">
+            <img
+              src={terminal}
+              alt="Drawing of a monitor"
+              className=" tools-image"
+            />
+          </div>
+        </div>
+
+        <div className="skill-list">
+          <ul>
+            <li>GIT</li>
+            <li>Postman</li>
+            <li>Webpack</li>
+            <li>NPM</li>
+            <li>Heroku</li>
+            <li>Jest</li>
+            <li>Enzyme</li>
+          </ul>
+        </div>
+      </div>
+      <div className="interested skill">
+        <div className="title-and-image">
+          <div className="skill-title">Interested</div>
+          <div className="book-image-container">
+            <img src={Book} alt="Drawing of a monitor" className="book-image" />
+          </div>
+        </div>
+
+        <div className="skill-list">
+          <ul>
+            <li>Python</li>
+            <li>Data Science</li>
+            <li>Java for Android</li>
+            <li>React Native</li>
+            <li>Elixir</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

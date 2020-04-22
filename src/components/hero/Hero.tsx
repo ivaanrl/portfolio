@@ -1,31 +1,35 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import './Hero.scss';
-import Typist from 'react-typist';
+import React from "react";
+import "./Hero.scss";
+import mockUp from "../../assets/FigmaComponents/HeroMockUpPage.png";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
-    <div className="main-container">
-      <Typist
-        className="typist"
-        cursor={{
-          show: true,
-          blink: true,
-          element: '|',
-          hideWhenDone: true,
-          hideWhenDoneDelay: 250
-        }}
-      >
-        <a className="name">
-          I'm <span>Iván Roldán Lusich.</span>
-        </a>
-        <br />
-        <a className="country">Argentina.</a>
-        <br />
-        <a className="full-stack">
-          <span>Full-stack</span> Web Developer.
-        </a>
-      </Typist>
+    <div className="main-container" id="home">
+      <div className="titles-and-buttons">
+        <div className="main-title">Full-Stack web developer.</div>
+        <div className="subtitle">I help deliver amazing user experience.</div>
+        <div className="buttons-container">
+          <div className="see-my-work">
+            <Link to="projects" smooth={true} offset={-120}>
+              See my work
+            </Link>
+          </div>
+          <div className="check-my-skills">
+            <Link to="skills" smooth={true} offset={20}>
+              Check my skills
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="image">
+        <img
+          src={mockUp}
+          className="mockup-image"
+          alt="mock up of a web app."
+        />
+      </div>
     </div>
   );
 };

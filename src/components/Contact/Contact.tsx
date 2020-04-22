@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import './Contact.scss';
-import * as emailjs from 'emailjs-com';
+import React, { useState } from "react";
+import "./Contact.scss";
+import * as emailjs from "emailjs-com";
 const Contact = () => {
-  const [feedback, setFeedback] = useState();
-  const [email, setEmail] = useState();
+  const [feedback, setFeedback] = useState("");
+  const [email, setEmail] = useState("");
+
+  // eslint-disable-next-line no-useless-escape
+  const emailRegex: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   const handleChange = (
     event:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
-    if (event.currentTarget.id === 'email') {
+    if (event.currentTarget.id === "email") {
       setEmail(event.currentTarget.value);
     } else {
       setFeedback(event.currentTarget.value);
@@ -18,28 +21,25 @@ const Contact = () => {
   };
 
   const handleSubmit = () => {
-    const templateId = 'template_6UyWUtVR';
+    const templateId = "template_6UyWUtVR";
     sendFeedback(templateId, {
       message_html: feedback,
-      from_email: email
+      from_email: email,
     });
     resetForm();
   };
 
   const sendFeedback = (templateId: string, variables: {}) => {
-    emailjs.send('gmail', templateId, variables, 'user_Tqu4Qb768TWFhX3VukiG7');
+    emailjs.send("gmail", templateId, variables, "user_Tqu4Qb768TWFhX3VukiG7");
   };
 
   const resetForm = () => {
-    setEmail('');
-    setFeedback('');
+    setEmail("");
+    setFeedback("");
   };
 
   return (
-    <div className="container" id="contact">
-      <div className="title-container">
-        <div className="title contact-main-title">Contact</div>
-      </div>
+    <div className="contact-container" id="contact">
       <form className="test-mailing">
         <h1>Feel Free to Contact Me</h1>
         <div>
@@ -63,7 +63,12 @@ const Contact = () => {
             value={feedback}
           />
         </div>
-        <button type="button" className="btn-contact" onClick={handleSubmit}>
+        <button
+          type="button"
+          className="btn-contact"
+          onClick={handleSubmit}
+          disabled={!emailRegex.test(email) || feedback === ""}
+        >
           Submit
         </button>
       </form>

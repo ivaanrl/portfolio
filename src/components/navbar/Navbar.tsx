@@ -21,11 +21,11 @@ const Navbar = (props: navBarProps) => {
         <Link to="home" smooth={true} offset={-120}>
           <div className="nav-item">Home</div>
         </Link>
-        <Link to="skills" smooth={true} offset={20}>
-          <div className="nav-item">Skills</div>
-        </Link>
         <Link to="projects" smooth={true} offset={-120}>
           <div className="nav-item">Projects</div>
+        </Link>
+        <Link to="skills" smooth={true} offset={20}>
+          <div className="nav-item">Skills</div>
         </Link>
         <Link to="contact" smooth={true}>
           <div className="nav-item">Contact</div>

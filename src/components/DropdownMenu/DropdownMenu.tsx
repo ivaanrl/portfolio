@@ -20,9 +20,6 @@ const DropdownMenu = (props: dropdownMenuProps) => {
       <Link to="home" smooth={true} offset={-120} onClick={switchDropdownMenu}>
         <div className="dropdown-menu-nav-item">Home</div>
       </Link>
-      <Link to="skills" smooth={true} offset={-60} onClick={switchDropdownMenu}>
-        <div className="dropdown-menu-nav-item">Skills</div>
-      </Link>
       <Link
         to="projects"
         smooth={true}
@@ -30,6 +27,9 @@ const DropdownMenu = (props: dropdownMenuProps) => {
         onClick={switchDropdownMenu}
       >
         <div className="dropdown-menu-nav-item">Projects</div>
+      </Link>
+      <Link to="skills" smooth={true} offset={-60} onClick={switchDropdownMenu}>
+        <div className="dropdown-menu-nav-item">Skills</div>
       </Link>
       <Link to="contact" smooth={true} onClick={props.switchDropdownMenu}>
         <div className="dropdown-menu-nav-item">Contact</div>

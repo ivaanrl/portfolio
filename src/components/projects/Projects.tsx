@@ -34,48 +34,53 @@ const Projects = () => {
   const pomodoroDescription: string =
     "This is a simple Pomodoro Timer in which you can set custom times for your work sessions and breaks. It was built using TDD (Test Driven Development), using Jest and Enzyme.";
   return (
-    <div className="projects-container" id="projects">
-      <ScrollAnimation animateIn="flipInX" animateOnce>
-        <Project
-          title="Twooter"
-          description={TwooterDescription}
-          github="https://github.com/ivaanrl/social-clone"
-          liveSite="https://ivaanrl.github.io/social-clone/"
-          picture={TwotterImg}
-          technologies={twooterTechnologies}
-        ></Project>
-      </ScrollAnimation>
-      <ScrollAnimation animateIn="flipInY" animateOnce>
-        <Project
-          title="Algorithm Visualizer"
-          description={AlgorithmDescription}
-          github="https://github.com/ivaanrl/algorithmVisualizer"
-          liveSite="https://ivaanrl.github.io/algorithmVisualizer/sortingVisualizer"
-          picture={AlgorithmsImg}
-          technologies={algorithmTechnologies}
-        ></Project>
-      </ScrollAnimation>
-      <ScrollAnimation animateIn="flipInY" animateOnce>
-        <Project
-          title="Pathfinding Visualizer"
-          description={pathfindingDescription}
-          github="https://github.com/ivaanrl/pathfindingVisualizer"
-          liveSite="https://ivaanrl.github.io/pathfindingVisualizer/"
-          picture={PathfindingImg}
-          technologies={pathfindignTechnologies}
-        ></Project>
-      </ScrollAnimation>
-      <ScrollAnimation animateIn="flipInX" animateOnce>
-        <Project
-          title="Pomodoro Timer (TDD with Jest + Enzyme)"
-          description={pomodoroDescription}
-          github="https://github.com/ivaanrl/pomodoro"
-          liveSite="https://ivaanrl.github.io/pomodoro/"
-          picture={PomodoroImg}
-          technologies={pomodoroTechnologies}
-        ></Project>
-      </ScrollAnimation>
-    </div>
+    <React.Fragment>
+      <div className="projects-container" id="projects">
+        <ScrollAnimation animateIn="flipInX" animateOnce>
+          <Project
+            title="Twooter"
+            description={TwooterDescription}
+            github="https://github.com/ivaanrl/social-clone"
+            liveSite="https://ivaanrl.github.io/social-clone/"
+            picture={TwotterImg}
+            technologies={twooterTechnologies}
+          ></Project>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="flipInY" animateOnce>
+          <Project
+            title="Algorithm Visualizer"
+            description={AlgorithmDescription}
+            github="https://github.com/ivaanrl/algorithmVisualizer"
+            liveSite="https://ivaanrl.github.io/algorithmVisualizer/sortingVisualizer"
+            picture={AlgorithmsImg}
+            technologies={algorithmTechnologies}
+          ></Project>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="flipInY" animateOnce>
+          <Project
+            title="Pathfinding Visualizer"
+            description={pathfindingDescription}
+            github="https://github.com/ivaanrl/pathfindingVisualizer"
+            liveSite="https://ivaanrl.github.io/pathfindingVisualizer/"
+            picture={PathfindingImg}
+            technologies={pathfindignTechnologies}
+          ></Project>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="flipInX" animateOnce>
+          <Project
+            title="Pomodoro Timer (TDD with Jest + Enzyme)"
+            description={pomodoroDescription}
+            github="https://github.com/ivaanrl/pomodoro"
+            liveSite="https://ivaanrl.github.io/pomodoro/"
+            picture={PomodoroImg}
+            technologies={pomodoroTechnologies}
+          ></Project>
+        </ScrollAnimation>
+      </div>
+      <a href="https://github.com/ivaanrl" target="blank">
+        <div className="github-button">Github profile</div>
+      </a>
+    </React.Fragment>
   );
 };
 

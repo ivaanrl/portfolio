@@ -21,3 +21,25 @@
     grid-template-rows: 1fr 1fr;
   }
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.github-button {
+  background-color: $highlight-font-color;
+  color: $body-background-color;
+  cursor: pointer;
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+  border-radius: 5px;
+  padding: 17px;
+  width: 20%;
+}
+
+.github-button:hover {
+  background-color: $highlight-font-color-hover;
+}
